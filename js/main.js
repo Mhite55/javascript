@@ -114,7 +114,7 @@ function mult(nbra, nbrb) {
     return nbra * nbrb
 }
 
-let result= mult(nbra, nbrb)
+ let result= mult(nbra, nbrb)
 console.log(result)
 
 
@@ -127,4 +127,117 @@ function div(nbra, nbrb) {
 } 
 console.log(div(nbra,nbrb))
 
+//Version nul
 
+function isEven(nbr){
+    if ( nbr % 2 == 0){
+        return true
+    }else{
+        return false
+    }
+}
+
+//version optimisée
+
+function isEven(nbr) {
+    return nbr %2 == 0
+}
+
+console.log(isEven(47))
+
+//Changement de classe
+
+//GetElementsByClassName -> retourne toujour un tableau, même si il y a qu'un seule élément
+//const red = document.getElementsByClassName('red')[0]
+const red = document.querySelector('.red')
+red.className = "blue" //à évitér
+red.classList.add("gras")
+red.classList.remove('blue')
+red.classList.add("red")
+console.log (red)
+
+//EXERCICE
+
+//Faire un fonction replaceC(elements_a_cible, ancienne_class, la_nouvelle_class)
+
+//exemple :
+
+//<a href="#" class="btn btn-primary">Envoyer</a>
+
+//replaceC(<a>, "btn-primary", "btn-danger")
+
+// <a href="#" class="btn btn-danger">Envoyer</a>
+
+//faire le corps de la fonction, cette fonction ne retourne rien 
+// function replaceC(target, oldClass, newClass) {
+//     const t = document.querySelector(target)
+//     if (oldClass !== newClass){
+//         if(t.classList.contains(oldClass)){
+//             t.classList.remove(oldClass)
+//             t.classList.add(newClass)
+//         }else{
+//             console.error("La classe n'existe pas dans l'element" + target)
+//         }
+//     }else{
+//         console.error("Vous voulez remplacer la class par elle même. ")
+//     }
+// }
+// replaceC("#exo", "blue", "green")
+
+/* 
+Créez une fonction qui : 
+    demande la saisie d'un rayon ;
+    retourne la surface du cercle de ce rayon
+*/
+
+function cercleCalc(rayon, isCircle){
+    if (isCircle){
+        return Math.PI * ( rayon ** 2 ) 
+    }else{
+        return  rayon ** 2 // c'est un carré
+    }
+}
+console.log(Math.PI);
+console.log(cercleCalc(5))
+
+//EVENEMENTS 
+
+const likes = document.getElementById('likes')
+const btn = document.querySelector('.btn');
+let likesNumber = 0
+
+btn.addEventListener("click", function() {
+    likesNumber++
+    likes.innerHTML = likesNumber
+    this.classList.toggle("pink")
+    this.classList.toggle("chartreuse")
+})
+
+//Exercice fait un mode jour et nuit
+
+const mode = document.querySelector('.mode')
+const body = document.querySelector('body')
+
+mode.addEventListener("click", function(){
+    body.classList.toggle("dark")
+})
+
+// Timers
+// Le setTimeout dans cette exemple au bout de 5 secondes (5000ms)
+// La fonction anonyme sera traitée ( le console log envoyé )
+setTimeout(function(){
+    console.log("coucou !!")
+}, 5000);
+
+setInterval(function(){
+    console.log("Exterminate !!!")
+}, 2000);
+
+// faire un lorem ipsum dans un <p> et toute les 3 seconde il changera de taille 
+// la taille initiale et de 1 em et la taille d'aprés est 3 em et vice versa
+
+const text= document.querySelector("#text-lorem")
+
+    setInterval(function(){
+        text.classList.toggle("grossisement")
+    }, 3000);
