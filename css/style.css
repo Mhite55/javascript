@@ -1,9 +1,19 @@
+@font-face {
+    font-family: "Classe";
+    src: url(../fonts/The\ Centurion\ .ttf);
+}
+@font-face {
+    font-family: "titre";
+    src: url(../fonts/KAISG___.TTF);
+}
 #mcflan{
     color: gray;
     font-style: italic;
 }
 h1{
     color: rgb(248, 206, 127);
+    font-family: 'titre';
+    font-size: 5em;
 }
 .red {
     color: red;
@@ -145,4 +155,37 @@ p{
     100%{
         transform: rotate(15deg);
     }
+}
+
+label {
+    display: block;
+    margin-bottom: 1em;
+    font-family: 'classe';
+    font-size: 2.5em;
+}
+#task::placeholder {
+    font-family: 'classe';
+    font-size: 1.5em;
+}
+#task{
+    height: 2.5em;
+}
+#add {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    font-family: 'classe';
+    border-radius: 20px;
+    font-size: 2em;
+}
+#scroll {
+    height: 40vw;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../img/parchemin.png");
+}
+li {
+    list-style: none;
 }

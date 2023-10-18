@@ -15,7 +15,7 @@ ob.innerHTML = obSlice
 let state = true;
 noMoney.style.display= "none"
 let valeur = 0
-let prix = 0
+let prix = 100
 countMoney.innerHTML = valeur 
 
 btnMoney.addEventListener("click", function(){
