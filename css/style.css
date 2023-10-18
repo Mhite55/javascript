@@ -50,8 +50,99 @@ h1{
 }
 p{
     font-size: 1em;
-    color: aqua;
+    color: rgb(245, 19, 19);
 }
 .grossisement {
     font-size: 3em;
+}
+.image-round {
+    border-radius: 50%;
+    filter: grayscale(100%);
+    margin-bottom: 10vh;
+}
+.wd-20{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    
+}
+.wd-20::first-letter{
+    font-weight: bold;
+    color: red;
+    font-size: 2.5em;
+    margin-left: 10%;
+}
+#paywall::before {
+    background: linear-gradient(180deg,hsla(0,0%,100%,0)0,#fff);
+    content: "";
+    height: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+}
+#paywall {
+    position: relative;
+    height: 20px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#money{
+    background-color: #75856B;
+    background-image: url(../img/OIG.jpeg);
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    height: 500px;
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#no-money{
+    background-color: #75856B;
+    background-image: url(../img/moi.jpeg);
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    height: 500px;
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#flouz{
+    font-size: 2em;
+}
+
+#btn-money{
+    padding : 1.3em 3em 1.3em 3em;
+    margin-bottom: 3em;
+    border-radius: 30px;
+    background-color: #75856B;
+    color: beige;
+    animation-name: billet;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+}
+#count-money{
+    margin-left: 1em;
+}
+
+@keyframes billet {
+    0% {
+        transform: rotate(15deg);
+    }
+    33%{
+        transform: rotate(-15deg);
+    }
+    66%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(15deg);
+    }
 }
