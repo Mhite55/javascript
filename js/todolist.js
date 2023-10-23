@@ -11,8 +11,26 @@ add.disabled = true
 function creatList(array) {
     list.innerHTML = ""
     for( i of array){
-        list.innerHTML += `<li>${i}</li>`
+        list.innerHTML += `<li class="no-strike">${i}</li>`
     }
+}
+function addEventToLi(liArray) { 
+    for (li of liArray){
+        li.addEventListener("click", function(){
+            this.classList.toggle("no-strike")
+            this.classList.toggle("strike")
+        })
+    }
+}
+function listUpdate() {
+    tdlArray.push(buffer)
+    task.value = "" // On vide l'input pour ne pas avoir d'incohérances
+    buffer = "" //On vide le buffer pour ne pas avoir d'incohérances 
+    console.log(tdlArray)
+    add.disabled = true
+    creatList(tdlArray)
+    let liElements = document.getElementsByTagName("li")
+    addEventToLi(liElements)
 }
 
 task.addEventListener('input', function(event){
@@ -25,14 +43,10 @@ task.addEventListener('input', function(event){
    }
 })
 
+
 add.addEventListener('click', function(){
     if (task.value.length !== 0) {
-        tdlArray.push(buffer)
-        task.value = "" // On vide l'input pour ne pas avoir d'incohérances
-        buffer = "" //On vide le buffer pour ne pas avoir d'incohérances 
-        console.log(tdlArray)
-        add.disabled = true
-        creatList(tdlArray)
+       listUpdate()
     }else{
         console.error("Veuillez remplir le champs des tàche sale con")
     }
@@ -41,12 +55,7 @@ add.addEventListener('click', function(){
 document.addEventListener('keypress', function(event){
     if (event.key === "Enter") {
         if (task.value.length !== 0) {
-            tdlArray.push(buffer)
-            task.value = "" // On vide l'input pour ne pas avoir d'incohérances
-            buffer = "" //On vide le buffer pour ne pas avoir d'incohérances 
-            console.log(tdlArray)
-            add.disabled = true
-            creatList(tdlArray)
+            listUpdate()
         }else{
             console.error("Veuillez remplir le champs des tàche sale con")
         }

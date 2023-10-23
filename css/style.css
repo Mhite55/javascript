@@ -186,6 +186,27 @@ label {
     background-repeat: no-repeat;
     background-image: url("../img/parchemin.png");
 }
+ul {
+    padding-top: 5%;
+    padding-right: 3%;
+}
 li {
+    font-size: 1.2em;
+    margin-top: 1.5%;
     list-style: none;
+    font-family: "classe";
+}
+li::selection{
+    background: transparent;   
+}
+.no-strike {
+    cursor: grabbing;
+    text-decoration: none;
+}
+.strike{
+    cursor: grabbing;
+    text-decoration-color: red ;
+    text-underline-offset: -0.3em;
+    text-decoration-skip-ink: none;
+    text-decoration: line-through;
 }
