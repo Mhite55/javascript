@@ -2,13 +2,14 @@ const imgDeMerdeUn = document.getElementById("photo-de-merde-1")
 const imgDeMerdeDeux = document.getElementById("photo-de-merde-2")
 const rangeInput = document.getElementById("rangeInput")
 
-rangeInput.addEventListener("input", function(event){
-   console.log(event.target.value)
-   let valeurRange = event.target.value;
-   const opacite = valeurRange * 10;
-   if (event.target.value >= -100 && event.target.value <= 0 ) {
-    opacite = imgDeMerdeUn.style.opacity
-   }
+rangeInput.value = 0
+
+rangeInput.addEventListener("input", function(){
+   console.log(rangeInput.value)
+   let valeurRange = rangeInput.value;
+   imgDeMerdeUn.style.opacity = 1 + valeurRange / 10
+   console.log(1 + valeurRange / 10)
+   imgDeMerdeDeux.style.opacity = 1 - valeurRange / 10
 })
 
 
