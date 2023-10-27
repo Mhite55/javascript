@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60vh;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5em;
+    font-style: italic;
+    margin-bottom: 5%;
+}
+
+.eleve{
+    width: 30%;
+    font-size: 2em;
+}
+
+#next {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+#btn {
+    background-color: blue;
+    color: white;
+    font-size: 2em;
+}
+
+#you {
+    width: 30%;
+    font-size: 2em;
+}

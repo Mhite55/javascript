@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'machine';
+    src: url(../fonts/JMH\ Typewriter.ttf);
+}
+p , h1{
+    font-family: 'machine';
+}
