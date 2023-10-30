@@ -1,34 +1,34 @@
 let listEleve = [ "Antonin", "Clarisse", "Dylan", "Grégory", 
 "Jérome", "Johan" , "Jonathan", "Pierre", "Raphael", "Steven"]
 
+const listInterroge = document.getElementById('list-inter')
 const list = document.getElementById('list')
 const btn = document.getElementById('btn')
 
-let listEleveCopie = []
-// list.innerHTML += `<li class="list-a-la-con">${listEleve}</li>`
+let listEleveCopie = [...listEleve]
 
-// function creatList(array) {
-//     for( listEleve of array){
-//         list.innerHTML += `<li class="list-a-la-con">${listEleve}</li>`
-//     }
-// }
-
-// listEleve.forEach(noms => {
-//     list.innerHTML += `<li class="list-a-la-con">${listEleve[noms]}</li>`
-// });
-
-btn.addEventListener('click', function(){
-    let random = 0 + Math.floor(10 * Math.random())
-    console.log(random)
-})
+let nbrList = 10
 
 for (let index = 0; index < listEleve.length; index++) {
-    list.innerHTML += `<li class="list-a-la-con">${listEleve[index]}</li>`
+    list.innerHTML += `<li class="list-a-la-con">${listEleveCopie[index]}</li>`
 }
 
-function displayList(){
-    for (let i = 0; i < listEleve.length; i++) {
-        listEleveCopie[i] = listEleve[i];
+btn.addEventListener('click', function(){
+        let ramdom =  Math.floor(Math.random() * (nbrList - 0) + 0)
+        listInterroge.innerHTML = listEleveCopie[ramdom]
+        listEleveCopie.splice(ramdom, 1)
+        list.innerHTML = ""
+        nbrList--
+        for (let index = 0; index < listEleveCopie.length; index++) {
+            list.innerHTML += `<li class="list-a-la-con">${listEleveCopie[index]}</li>`
+        }
+        if (listEleveCopie.length === 0 ){
+            listEleveCopie = [...listEleve]
+            nbrList = 10
+        }
         console.log(listEleveCopie)
-    }
-}
+        console.log(ramdom)
+        console.log(nbrList)
+})
+
+
