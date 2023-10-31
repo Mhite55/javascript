@@ -16,9 +16,14 @@ for (let index = 0; index < listEleve.length; index++) {
 btn.addEventListener('click', function(){
         let ramdom =  Math.floor(Math.random() * (nbrList - 0) + 0)
         listInterroge.innerHTML = listEleveCopie[ramdom]
+        // on utilise la methode splice : le premier argument est l'index de élément à enlever
+        // le deuxiéme argument est nombre d'element à enlever à partir de l'index
         listEleveCopie.splice(ramdom, 1)
         list.innerHTML = ""
         nbrList--
+        if (nbrList == 0){
+            alert('liste fini')
+        }
         for (let index = 0; index < listEleveCopie.length; index++) {
             list.innerHTML += `<li class="list-a-la-con">${listEleveCopie[index]}</li>`
         }
